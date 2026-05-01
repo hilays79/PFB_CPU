@@ -15,3 +15,10 @@
 
 # Ignore the entire animations subdirectory
 Data/animations/
+
+# Ignore VScode setup files
+codes/.vscode
+codes/Fourier_Space.code-workspace
+
+# Ignore tests
+codes/tests/
