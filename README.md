@@ -1,7 +1,3 @@
-Here is a beautifully formatted version of the README. It keeps every word of the original content exactly the same but restructures the commands and notes so they are much easier to read, scan, and copy-paste on GitHub. 
-
-You can copy the code block below directly into your `README.md` file:
-
 ```markdown
 <h1 align="center">Fourier Space: Polyphase Filter Bank (PFB) Benchmarking</h1>
 
