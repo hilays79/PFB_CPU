@@ -1,4 +1,3 @@
-```markdown
 <h1 align="center">Fourier Space: Polyphase Filter Bank (PFB) Benchmarking</h1>
 
 This repository contains tools and implementations for benchmarking a Polyphase Filter Bank (PFB) spectrometer. It features both a baseline Python implementation and an optimized C++ implementation to compare processing speeds, setup times, and numerical accuracy.
