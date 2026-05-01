@@ -4,6 +4,7 @@
 # 2. Explicitly allow the directories you want
 !/codes/
 !/Data/
+!/README.md
 
 # 3. Explicitly allow essential Git configuration files
 !/.gitignore
