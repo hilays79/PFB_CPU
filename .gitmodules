@@ -1,0 +1,6 @@
+[submodule "codes/PFB_python"]
+	path = codes/PFB_python
+	url = https://github.com/hilays79/PolyphaseFilterbank_Python
+[submodule "codes/PFB_cpp"]
+	path = codes/PFB_cpp
+	url = https://github.com/hilays79/PolyphaseFilterbank_Cpp
