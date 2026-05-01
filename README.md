@@ -50,6 +50,7 @@ cd codes/PFB_cpp/build
 ```
 
 **Step 2:** Configure the project with CMake
+
 On MacOS
 ```console
 CXX=g++-15 CC=gcc-15 cmake .. ..
@@ -81,7 +82,7 @@ The primary testing and benchmarking suite is handled by `python_c_comparison.py
 
 **Step 1:** Navigate to the Python codes directory
 ```console
-cd codes/PFB_python
+cd ../../PFB_python/
 ```
 
 **Step 2:** Run the benchmarking script
