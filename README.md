@@ -50,8 +50,13 @@ cd codes/PFB_cpp/build
 ```
 
 **Step 2:** Configure the project with CMake
+On MacOS
 ```console
 CXX=g++-15 CC=gcc-15 cmake .. ..
+```
+On Linux
+```console
+cmake .. ..
 ```
 
 **Step 3:** Compile the executable
