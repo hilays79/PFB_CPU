@@ -23,3 +23,6 @@ codes/Fourier_Space.code-workspace
 
 # Ignore tests
 codes/tests/
+
+# Ignore build directory as user will create their own
+codes/PFB_cpp/build/
