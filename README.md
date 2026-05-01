@@ -80,12 +80,22 @@ The primary testing and benchmarking suite is handled by `python_c_comparison.py
 
 ### Execution
 
-**Step 1:** Navigate to the Python codes directory
+**Step 1:** Navigate to the Python codes directory and ensure you have python3 and pip installed
 ```console
 cd ../../PFB_python/
 ```
+**If you prefer to work in a virtual environment
+```console
+virtualenv -p python3 .venv
+source .venv/bin/activate
+```
 
-**Step 2:** Run the benchmarking script
+**Step 2:** If you do not have the dependencies installed, run
+```console
+pip install numpy scipy matplotlib ipdb
+```
+
+**Step 3:** Run the benchmarking script
 ```console
 python python_c_comparison.py
 ```
@@ -104,5 +114,5 @@ W       | Py Time (s)  | C++ Tot (s)  | C++ Set (s)  | C++ Exe (s)  | C++ Set/Ex
 
 ##  Dependencies
 
-- **Python:** NumPy, SciPy, Matplotlib (for visualization/testing), `ipdb` (for debugging).
-- **C++:** CMake (v3.10+), a standard C++ compiler (GCC/Clang) with C++17 support.
+- **Python:** pip, NumPy, SciPy, Matplotlib (for visualization/testing), `ipdb` (for debugging).
+- **C++:** CMake (v3.10+), a standard C++ compiler (GCC) with C++17 support.
