@@ -12,12 +12,12 @@ Because the C++ and Python codebases are managed as **Git Submodules**, you *mus
 
 **Clone the repository with all submodules:**
 ```console
-$ git clone --recursive https://github.com/hilays79/PFB_CPU
+git clone --recursive https://github.com/hilays79/PFB_CPU
 ```
 
 **Navigate into the project:**
 ```console
-$ cd PFB_CPU
+cd PFB_CPU
 ```
 
 > *(If you accidentally cloned without the flag, you can fetch the submodules by running: `git submodule update --init --recursive`)*
@@ -39,20 +39,24 @@ The repository tracks the following core structure:
 ##  3. Compiling the C++ Backend
 
 Before running any benchmarks, you must compile the C++ executable. The build process uses CMake.
+**Step 1:** Create C++ build directory if it does not exist
+```console
+mkdir codes/PFB_cpp/build
+```
 
 **Step 1:** Navigate to the C++ build directory
 ```console
-$ cd codes/PFB_cpp/build
+cd codes/PFB_cpp/build
 ```
 
 **Step 2:** Configure the project with CMake
 ```console
-$ CXX=g++-15 CC=gcc-15 cmake .. ..
+CXX=g++-15 CC=gcc-15 cmake .. ..
 ```
 
 **Step 3:** Compile the executable
 ```console
-$ make
+make
 ```
 
 This will generate the `pfb_app` binary inside the `build/` directory.
@@ -72,12 +76,12 @@ The primary testing and benchmarking suite is handled by `python_c_comparison.py
 
 **Step 1:** Navigate to the Python codes directory
 ```console
-$ cd codes/PFB_python
+cd codes/PFB_python
 ```
 
 **Step 2:** Run the benchmarking script
 ```console
-$ python python_c_comparison.py
+python python_c_comparison.py
 ```
 
 ### Expected Output
