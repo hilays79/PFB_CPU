@@ -1,71 +1,104 @@
-Polyphase Filter Bank (PFB) Benchmarking
+Here is a beautifully formatted version of the README. It keeps every word of the original content exactly the same but restructures the commands and notes so they are much easier to read, scan, and copy-paste on GitHub. 
+
+You can copy the code block below directly into your `README.md` file:
+
+```markdown
+<h1 align="center">Fourier Space: Polyphase Filter Bank (PFB) Benchmarking</h1>
+
 This repository contains tools and implementations for benchmarking a Polyphase Filter Bank (PFB) spectrometer. It features both a baseline Python implementation and an optimized C++ implementation to compare processing speeds, setup times, and numerical accuracy.
 
-The project is structured with the Python and C++ source codes maintained as independent Git submodules, alongside a structured Data directory for binary signal inputs and outputs (.dada files).
+The project is structured with the Python and C++ source codes maintained as independent Git submodules, alongside a structured `Data` directory for binary signal inputs and outputs (.dada files).
 
-1. Cloning the Repository (Important!)
-Because the C++ and Python codebases are managed as Git Submodules, you must use the --recursive flag when cloning this repository so that Git automatically pulls the code into the codes/PFB_cpp and codes/PFB_python directories.
+---
 
-Bash
-# Clone the repository with all submodules
-git clone --recursive https://github.com/hilays79/PFB_CPU
+##  1. Cloning the Repository (Important!)
 
-# Navigate into the project
-cd PFB_CPU
-(If you accidentally cloned without the flag, you can fetch the submodules by running: git submodule update --init --recursive)
+Because the C++ and Python codebases are managed as **Git Submodules**, you *must* use the `--recursive` flag when cloning this repository so that Git automatically pulls the code into the `codes/PFB_cpp` and `codes/PFB_python` directories.
 
-2. Directory Structure & Data
+**Clone the repository with all submodules:**
+```console
+$ git clone --recursive <YOUR_PARENT_REPO_URL>
+```
+
+**Navigate into the project:**
+```console
+$ cd Fourier_Space
+```
+
+> *(If you accidentally cloned without the flag, you can fetch the submodules by running: `git submodule update --init --recursive`)*
+
+---
+
+##  2. Directory Structure & Data
+
 The repository tracks the following core structure:
 
-codes/PFB_cpp/: Submodule containing the C++ implementation.
+- 📁 `codes/PFB_cpp/`: Submodule containing the C++ implementation.
+- 📁 `codes/PFB_python/`: Submodule containing the Python implementation and the main benchmarking scripts.
+- 📁 `Data/`: Directory structure for inputs and outputs. 
 
-codes/PFB_python/: Submodule containing the Python implementation and the main benchmarking scripts.
+> **Note on Data:** To keep the repository lightweight, massive binary `.dada` files and animation `.mp4` files are strictly ignored by Git. The `Data` folder contains placeholder files to preserve the necessary directory tree. The benchmarking script will automatically generate the required binary input files on the fly if they are missing.
 
-Data/: Directory structure for inputs and outputs.
+---
 
-Note on Data: To keep the repository lightweight, massive binary .dada files and animation .mp4 files are strictly ignored by Git. The Data folder contains placeholder files to preserve the necessary directory tree. The benchmarking script will automatically generate the required binary input files on the fly if they are missing.
+##  3. Compiling the C++ Backend
 
-3. Compiling the C++ Backend
 Before running any benchmarks, you must compile the C++ executable. The build process uses CMake.
 
-Bash
-# 1. Navigate to the C++ build directory
-cd codes/PFB_cpp/build
+**Step 1:** Navigate to the C++ build directory
+```console
+$ cd codes/PFB_cpp/build
+```
 
-# 2. Configure the project with CMake
-Run "cmake .." on linux
-Run "CXX=g++-15 CC=gcc-15 cmake .." on MacOS with the necessary compilers installed
+**Step 2:** Configure the project with CMake
+```console
+$ cmake ..
+```
 
-# 3. Compile the executable
-make
-This will generate the pfb_app binary inside the build/ directory. Make sure the linking libraries like FFTW3 are installed.
+**Step 3:** Compile the executable
+```console
+$ make
+```
 
-4. Running the Benchmarks
-The primary testing and benchmarking suite is handled by python_c_comparison.py. This script handles the end-to-end pipeline:
+This will generate the `pfb_app` binary inside the `build/` directory.
 
-It checks for the necessary binary test signals (e.g., complex phasors) in the Data/input_files/ directory and generates them if they don't exist.
+---
 
-It runs the Python PFB implementation and records the time.
+##  4. Running the Benchmarks
 
-It executes the compiled C++ pfb_app binary (handling the relative paths automatically) and records its setup and execution times.
+The primary testing and benchmarking suite is handled by `python_c_comparison.py`. This script handles the end-to-end pipeline:
 
-It compares the output .dada files from both languages to ensure mathematical parity (calculating the maximum absolute difference).
+1. It checks for the necessary binary test signals (e.g., complex phasors) in the `Data/input_files/` directory and generates them if they don't exist.
+2. It runs the Python PFB implementation and records the time.
+3. It executes the compiled C++ `pfb_app` binary (handling the relative paths automatically) and records its setup and execution times.
+4. It compares the output `.dada` files from both languages to ensure mathematical parity (calculating the maximum absolute difference).
 
-Execution
-Bash
-# 1. Navigate to the Python codes directory
-cd codes/PFB_python
+### Execution
 
-# 2. Run the benchmarking script
-python python_c_comparison.py
-Expected Output
-The script will output a table comparing the performance across varying window sizes (W).
+**Step 1:** Navigate to the Python codes directory
+```console
+$ cd codes/PFB_python
+```
 
-Plaintext
+**Step 2:** Run the benchmarking script
+```console
+$ python python_c_comparison.py
+```
+
+### Expected Output
+
+The script will output a table comparing the performance across varying window sizes (`W`).
+
+```text
 W       | Py Time (s)  | C++ Tot (s)  | C++ Set (s)  | C++ Exe (s)  | C++ Set/Exec | Speedup   | Max Diff  
 ---------------------------------------------------------------------------------------------------------
 100     | ...          | ...          | ...          | ...          | ...          | ...x      | ...
-Dependencies
-Python (written using v3.10.9): NumPy, SciPy, Matplotlib (for visualization/testing), ipdb (for debugging).
+```
 
-C++: CMake (v3.10+), a standard C++ compiler (GCC-15 preferred) with C++17 support.
+---
+
+##  Dependencies
+
+- **Python:** NumPy, SciPy, Matplotlib (for visualization/testing), `ipdb` (for debugging).
+- **C++:** CMake (v3.10+), a standard C++ compiler (GCC/Clang) with C++17 support.
+```</YOUR_PARENT_REPO_URL>
