@@ -12,12 +12,12 @@ Because the C++ and Python codebases are managed as **Git Submodules**, you *mus
 
 **Clone the repository with all submodules:**
 ```console
-$ git clone --recursive <YOUR_PARENT_REPO_URL>
+$ git clone --recursive https://github.com/hilays79/PFB_CPU
 ```
 
 **Navigate into the project:**
 ```console
-$ cd Fourier_Space
+$ cd PFB_CPU
 ```
 
 > *(If you accidentally cloned without the flag, you can fetch the submodules by running: `git submodule update --init --recursive`)*
@@ -28,9 +28,9 @@ $ cd Fourier_Space
 
 The repository tracks the following core structure:
 
-- 📁 `codes/PFB_cpp/`: Submodule containing the C++ implementation.
-- 📁 `codes/PFB_python/`: Submodule containing the Python implementation and the main benchmarking scripts.
-- 📁 `Data/`: Directory structure for inputs and outputs. 
+-  `codes/PFB_cpp/`: Submodule containing the C++ implementation.
+-  `codes/PFB_python/`: Submodule containing the Python implementation and the main benchmarking scripts.
+-  `Data/`: Directory structure for inputs and outputs. 
 
 > **Note on Data:** To keep the repository lightweight, massive binary `.dada` files and animation `.mp4` files are strictly ignored by Git. The `Data` folder contains placeholder files to preserve the necessary directory tree. The benchmarking script will automatically generate the required binary input files on the fly if they are missing.
 
@@ -47,7 +47,7 @@ $ cd codes/PFB_cpp/build
 
 **Step 2:** Configure the project with CMake
 ```console
-$ cmake ..
+$ CXX=g++-15 CC=gcc-15 cmake .. ..
 ```
 
 **Step 3:** Compile the executable
@@ -96,4 +96,4 @@ W       | Py Time (s)  | C++ Tot (s)  | C++ Set (s)  | C++ Exe (s)  | C++ Set/Ex
 
 - **Python:** NumPy, SciPy, Matplotlib (for visualization/testing), `ipdb` (for debugging).
 - **C++:** CMake (v3.10+), a standard C++ compiler (GCC/Clang) with C++17 support.
-```</YOUR_PARENT_REPO_URL>
+```https://github.com/hilays79/PFB_CPU
