@@ -6,13 +6,11 @@ The project is structured with the Python and C++ source codes maintained as ind
 
 ---
 
-##  1. Cloning the Repository (Important!)
-
-Because the C++ and Python codebases are managed as **Git Submodules**, you *must* use the `--recursive` flag when cloning this repository so that Git automatically pulls the code into the `codes/PFB_cpp` and `codes/PFB_python` directories.
+##  1. Cloning the Repository
 
 **Clone the repository with all submodules:**
 ```console
-git clone --recursive https://github.com/hilays79/PFB_CPU
+git clone https://github.com/hilays79/PFB_CPU
 ```
 
 **Navigate into the project:**
